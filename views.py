@@ -3,7 +3,7 @@ Routes and views for the flask application.
 """
 
 import json
-from flask import render_template, redirect, url_for, request, make_response
+from flask import render_template, redirect, url_for, request, make_response, flash
 from build_a_bear import app
 from build_a_bear.options import DEFAULTS
 
@@ -28,6 +28,7 @@ def builder():
 
 @app.route('/save', methods=['POST'])
 def save():
+    flash("That looks awesome!")
     response = make_response(redirect(url_for('builder')))
     data = get_saved_data()
     data.update(dict(request.form.items()))
