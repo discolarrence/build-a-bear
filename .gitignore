@@ -1,2 +1,5 @@
-#ignore img directory
+env/
+.vs/
+.vscode/
+/__pycache__/
 img/
